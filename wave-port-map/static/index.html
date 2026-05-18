@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wave Port Map</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">Local network listeners</p>
+        <h1>Active Ports Map</h1>
+        <p id="summary">Loading the processes currently listening on this Mac&hellip;</p>
+      </div>
+      <button id="refresh" type="button">Refresh</button>
+    </header>
+
+    <main>
+      <section class="diagram-card" aria-label="Active ports diagram">
+        <div id="diagram" class="diagram"></div>
+      </section>
+
+      <aside id="details" class="details" aria-live="polite">
+        <h2>Select a port</h2>
+        <p>Click any node in the diagram to see what is running there and choose an action.</p>
+      </aside>
+    </main>
+
+    <section class="table-card">
+      <h2>Plain-English port list</h2>
+      <div id="ports-table"></div>
+    </section>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

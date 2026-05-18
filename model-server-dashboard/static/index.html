@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Servers</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">Local &amp; remote inference</p>
+        <h1 id="title">Model Servers</h1>
+        <p id="summary">Loading&hellip;</p>
+      </div>
+      <button id="refresh" type="button">Refresh</button>
+    </header>
+
+    <main id="dashboard">
+      <!-- Cards render here -->
+    </main>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/app.js?v=2"></script>
+  </body>
+</html>

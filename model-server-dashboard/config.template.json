@@ -1,0 +1,54 @@
+{
+  "title": "Model Servers",
+  "refreshInterval": 30,
+  "servers": [
+    {
+      "name": "Kokoro TTS",
+      "host": "This Mac",
+      "label": "TTS",
+      "base_url": "http://127.0.0.1:8880",
+      "type": "openai",
+      "health_endpoint": "/health",
+      "models_endpoint": "/v1/models",
+      "description": "Local text-to-speech"
+    },
+    {
+      "name": "Ollama",
+      "host": "This Mac",
+      "label": "LLM",
+      "base_url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "models_endpoint": "/api/tags",
+      "description": "Local LLM runner"
+    },
+    {
+      "name": "LM Studio",
+      "host": "This Mac",
+      "label": "LLM",
+      "base_url": "http://127.0.0.1:1234",
+      "type": "openai",
+      "models_endpoint": "/v1/models",
+      "description": "Local inference server"
+    },
+    {
+      "name": "llama.cpp / vLLM",
+      "host": "<remote-host-label>",
+      "label": "LLM",
+      "base_url": "http://127.0.0.1:8000",
+      "type": "openai",
+      "models_endpoint": "/v1/models",
+      "ssh_host": "<ssh-host-alias>",
+      "description": "Remote GPU inference"
+    },
+    {
+      "name": "Ollama (remote)",
+      "host": "<remote-host-label>",
+      "label": "LLM",
+      "base_url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "models_endpoint": "/api/tags",
+      "ssh_host": "<ssh-host-alias>",
+      "description": "Remote LLM runner"
+    }
+  ]
+}
