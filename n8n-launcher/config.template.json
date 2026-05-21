@@ -1,0 +1,29 @@
+{
+  "title": "n8n Launcher",
+  "instances": [
+    {
+      "id": "local",
+      "name": "Local n8n",
+      "url": "http://127.0.0.1:5678",
+      "kind": "local",
+      "enabled": true,
+      "description": "Default local/community n8n UI"
+    },
+    {
+      "id": "cloud",
+      "name": "n8n Cloud",
+      "url": "https://<workspace>.app.n8n.cloud",
+      "kind": "cloud",
+      "enabled": false,
+      "description": "Paid n8n Cloud workspace. Replace the placeholder URL and set enabled to true."
+    },
+    {
+      "id": "remote-community",
+      "name": "Remote community n8n",
+      "url": "https://<hostname-or-domain>",
+      "kind": "remote",
+      "enabled": false,
+      "description": "Self-hosted n8n UI reachable over HTTPS. Replace the placeholder URL and set enabled to true."
+    }
+  ]
+}
