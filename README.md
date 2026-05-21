@@ -6,6 +6,7 @@ A collection of custom widgets for [Wave Terminal](https://waveterm.dev/).
 
 - **Port Map** — Visual diagram of active TCP listeners on your Mac, with process names, PIDs, and quick actions (Kill, Send to Terminal).
 - **Model Server Dashboard** — Status dashboard for local and remote model servers (Ollama, LM Studio, llama.cpp, Kokoro TTS, vLLM, etc.) with health checks, model listings, and per-server actions.
+- **n8n** — Opens the native n8n UI for local/community or paid/cloud instances, with the target URL set in local widget config.
 
 ## Requirements
 
@@ -31,6 +32,8 @@ After installation, click the widget's icon in the Wave sidebar to open it. Web 
 ## Configuration
 
 Widget-specific configuration is in `config.json` files **inside their directories**, which are gitignored. Use `config.template.json` as a starting point and copy it to populate your own endpoints.
+
+The n8n widget reads its instance URL from local config so it can point at either a self-hosted/community install or a paid/cloud n8n instance.
 
 ## Security
 

@@ -16,6 +16,7 @@ This repo contains independent Wave Terminal widget applications. Each widget li
 |---|---|---|---|
 | `wave-port-map/` | Visual map of active TCP ports with Mermaid diagram | 8765 | `com.thales.wave-port-map` |
 | `model-server-dashboard/` | Dashboard for local and remote model servers | 8787 | `com.thales.model-server-dashboard` |
+| `n8n-launcher/` | Opens the native n8n UI for local/community or cloud instances via local config | 8791 | `com.thales.n8n-launcher` |
 
 ## PII redaction — MANDATORY
 
