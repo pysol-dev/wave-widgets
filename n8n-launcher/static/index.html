@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>n8n Launcher</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">Native n8n UI</p>
+        <h1 id="title">n8n Launcher</h1>
+        <p id="summary">Loading configured local and cloud n8n instances...</p>
+      </div>
+      <button id="refresh" type="button">Refresh</button>
+    </header>
+
+    <main>
+      <section id="instances" class="instance-grid" aria-live="polite"></section>
+      <section class="note-card">
+        <h2>Configuration</h2>
+        <p>Edit <code>config.json</code> next to this widget to add paid n8n Cloud or remote community URLs. Keep tokens and credentials out of URLs.</p>
+      </section>
+    </main>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
