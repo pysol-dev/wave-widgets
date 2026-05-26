@@ -3,8 +3,8 @@
 set -eu
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-PLIST_SRC="${ROOT}/com.thales.model-server-dashboard.plist"
-PLIST_DST="${HOME}/Library/LaunchAgents/com.thales.model-server-dashboard.plist"
+PLIST_SRC="${ROOT}/wave.widgets.model-server-dashboard.plist"
+PLIST_DST="${HOME}/Library/LaunchAgents/wave.widgets.model-server-dashboard.plist"
 WIDGETS_JSON="${HOME}/.config/waveterm/widgets.json"
 PORT="${MODEL_DASHBOARD_PORT:-8787}"
 
@@ -21,7 +21,7 @@ cat > "${PLIST_SRC}" <<EOF
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.thales.model-server-dashboard</string>
+  <string>wave.widgets.model-server-dashboard</string>
   <key>ProgramArguments</key>
   <array>
     <string>/usr/bin/python3</string>
@@ -51,7 +51,7 @@ mkdir -p "$(dirname "${PLIST_DST}")"
 cp "${PLIST_SRC}" "${PLIST_DST}"
 
 launchctl bootstrap "gui/$(id -u)" "${PLIST_DST}" 2>/dev/null || true
-launchctl kickstart -k "gui/$(id -u)/com.thales.model-server-dashboard"
+launchctl kickstart -k "gui/$(id -u)/wave.widgets.model-server-dashboard"
 
 # Ensure widgets.json entry
 if [ -f "${WIDGETS_JSON}" ]; then

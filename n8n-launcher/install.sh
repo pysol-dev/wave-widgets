@@ -3,7 +3,7 @@
 set -eu
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-LABEL="com.thales.n8n-launcher"
+LABEL="wave.widgets.n8n-launcher"
 PLIST_SRC="${ROOT}/${LABEL}.plist"
 PLIST_DST="${HOME}/Library/LaunchAgents/${LABEL}.plist"
 WIDGETS_JSON="${HOME}/.config/waveterm/widgets.json"

@@ -3,8 +3,8 @@
 set -eu
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-PLIST_SRC="${ROOT}/com.thales.wave-port-map.plist"
-PLIST_DST="${HOME}/Library/LaunchAgents/com.thales.wave-port-map.plist"
+PLIST_SRC="${ROOT}/wave.widgets.wave-port-map.plist"
+PLIST_DST="${HOME}/Library/LaunchAgents/wave.widgets.wave-port-map.plist"
 WIDGETS_JSON="${HOME}/.config/waveterm/widgets.json"
 PORT="${WAVE_PORT_MAP_PORT:-8765}"
 
@@ -15,7 +15,7 @@ cat > "${PLIST_SRC}" <<EOF
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.thales.wave-port-map</string>
+  <string>wave.widgets.wave-port-map</string>
   <key>ProgramArguments</key>
   <array>
     <string>/usr/bin/python3</string>
@@ -45,7 +45,7 @@ mkdir -p "$(dirname "${PLIST_DST}")"
 cp "${PLIST_SRC}" "${PLIST_DST}"
 
 launchctl bootstrap "gui/$(id -u)" "${PLIST_DST}" 2>/dev/null || true
-launchctl kickstart -k "gui/$(id -u)/com.thales.wave-port-map"
+launchctl kickstart -k "gui/$(id -u)/wave.widgets.wave-port-map"
 
 # Ensure widgets.json entry exists (web widget)
 if [ -f "${WIDGETS_JSON}" ]; then
