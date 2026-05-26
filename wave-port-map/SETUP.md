@@ -23,7 +23,7 @@ cd wave-port-map
 This will:
 
 1. Copy `config.template.json` → `config.json` if needed
-2. Generate and load a LaunchAgent (`com.thales.wave-port-map`)
+2. Generate and load a LaunchAgent (`wave.widgets.wave-port-map`)
 3. Start the server on `http://127.0.0.1:8765`
 4. Add a `Port Map` web widget to `/Users/<user>/.config/waveterm/widgets.json`
 
@@ -44,5 +44,5 @@ curl http://127.0.0.1:8765/api/ports | python3 -m json.tool | head -10
 ## Troubleshooting
 
 - Server logs: `wave-port-map/launchd.out.log`
-- LaunchAgent status: `launchctl print gui/$(id -u)/com.thales.wave-port-map`
-- Restart: `launchctl kickstart -k gui/$(id -u)/com.thales.wave-port-map`
+- LaunchAgent status: `launchctl print gui/$(id -u)/wave.widgets.wave-port-map`
+- Restart: `launchctl kickstart -k gui/$(id -u)/wave.widgets.wave-port-map`

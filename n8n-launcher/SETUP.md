@@ -23,7 +23,7 @@ sh install.sh
 This will:
 
 1. Copy `config.template.json` to `config.json` if needed
-2. Generate and load a LaunchAgent (`com.thales.n8n-launcher`)
+2. Generate and load a LaunchAgent (`wave.widgets.n8n-launcher`)
 3. Start the launcher on `http://127.0.0.1:8791`
 4. Add an `n8n` web widget to `/Users/<user>/.config/waveterm/widgets.json`
 
@@ -63,6 +63,6 @@ curl http://127.0.0.1:8791/api/config | python3 -m json.tool
 ## Troubleshooting
 
 - Server logs: `n8n-launcher/launchd.out.log`
-- LaunchAgent status: `launchctl print gui/$(id -u)/com.thales.n8n-launcher`
-- Restart: `launchctl kickstart -k gui/$(id -u)/com.thales.n8n-launcher`
+- LaunchAgent status: `launchctl print gui/$(id -u)/wave.widgets.n8n-launcher`
+- Restart: `launchctl kickstart -k gui/$(id -u)/wave.widgets.n8n-launcher`
 - If a cloud or remote card says the URL still contains a placeholder, edit `config.json` and remove all angle-bracket placeholders.

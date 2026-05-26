@@ -26,7 +26,7 @@ cd model-server-dashboard
 This will:
 
 1. Copy `config.template.json` → `config.json`
-2. Generate and load a LaunchAgent (`com.thales.model-server-dashboard`)
+2. Generate and load a LaunchAgent (`wave.widgets.model-server-dashboard`)
 3. Start the server on `http://127.0.0.1:8787`
 4. Add a `Models` web widget to `/Users/<user>/.config/waveterm/widgets.json`
 
@@ -76,6 +76,6 @@ curl http://127.0.0.1:8787/api/servers | python3 -m json.tool | head -20
 ## Troubleshooting
 
 - Server logs: `model-server-dashboard/launchd.out.log`
-- LaunchAgent status: `launchctl print gui/$(id -u)/com.thales.model-server-dashboard`
-- Restart: `launchctl kickstart -k gui/$(id -u)/com.thales.model-server-dashboard`
+- LaunchAgent status: `launchctl print gui/$(id -u)/wave.widgets.model-server-dashboard`
+- Restart: `launchctl kickstart -k gui/$(id -u)/wave.widgets.model-server-dashboard`
 - SSH remote checks use the host's `~/.ssh/config` and SSH agent — ensure both are available to the LaunchAgent process.
