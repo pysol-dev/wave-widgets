@@ -1,0 +1,108 @@
+{
+  "title": "Research Cockpit",
+  "refreshInterval": 5,
+  "state": {
+    "file": "state/session.json"
+  },
+  "sourceTypes": [
+    {
+      "id": "web-page",
+      "label": "Web page",
+      "description": "A public web page or documentation page to read in a Wave web pane."
+    },
+    {
+      "id": "paper",
+      "label": "Paper or report",
+      "description": "A publication, report, or long-form source that needs citation review."
+    },
+    {
+      "id": "local-note",
+      "label": "Local note reference",
+      "description": "A user-owned note or index entry; store only non-secret URLs here."
+    }
+  ],
+  "workflows": [
+    {
+      "id": "default-research",
+      "label": "Default research workflow",
+      "phases": [
+        {
+          "id": "brief",
+          "label": "Brief",
+          "gate": "Question, scope, exclusions, and expected output are explicit."
+        },
+        {
+          "id": "survey",
+          "label": "Survey",
+          "gate": "Broad search terms, source types, and competing angles are recorded."
+        },
+        {
+          "id": "specialize",
+          "label": "Specialize",
+          "gate": "Bounded worker tasks have inputs, outputs, and stop conditions."
+        },
+        {
+          "id": "consolidate",
+          "label": "Consolidate",
+          "gate": "Findings, rejected claims, and open questions are merged into session state."
+        },
+        {
+          "id": "verify",
+          "label": "Verify",
+          "gate": "Claims are checked against sources for citation, freshness, and contradiction risk."
+        },
+        {
+          "id": "synthesize",
+          "label": "Synthesize",
+          "gate": "Final answer is drafted only from accepted evidence or explicit uncertainty."
+        }
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "id": "orchestrator",
+      "label": "Orchestrator",
+      "enabled": true,
+      "description": "Keeps the research brief, phase state, worker queue, and final handoff shape visible."
+    },
+    {
+      "id": "source-reader",
+      "label": "Source reader",
+      "enabled": true,
+      "description": "Reads queued sources and records candidate claims with links and notes."
+    },
+    {
+      "id": "skeptic",
+      "label": "Skeptic",
+      "enabled": true,
+      "description": "Looks for contradictions, weak sources, missing context, and unsupported jumps."
+    },
+    {
+      "id": "citation-checker",
+      "label": "Citation checker",
+      "enabled": true,
+      "description": "Checks whether final claims have stable, auditable source support."
+    },
+    {
+      "id": "synthesizer",
+      "label": "Synthesizer",
+      "enabled": true,
+      "description": "Drafts the final synthesis from accepted evidence and marked uncertainty."
+    }
+  ],
+  "copyableCommands": [
+    {
+      "id": "open-source-in-wave",
+      "label": "Open source in Wave web pane",
+      "template": "wsh web open {url}",
+      "description": "Copy this from a Wave-aware terminal if you want Wave to open the source in a web pane. The backend does not run wsh from LaunchAgent context."
+    },
+    {
+      "id": "start-worker-note",
+      "label": "Start worker from current task",
+      "template": "Research task: {task}",
+      "description": "Copy this prompt into your preferred Hermes-backed worker or agent pane."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+config.json
+state/
+launchd.out.log
+launchd.err.log
+wave.widgets.research-cockpit.plist
+*.tmp
+__pycache__/
