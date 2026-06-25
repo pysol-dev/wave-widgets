@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research Cockpit</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Wave control plane</p>
+        <h1>Research Cockpit</h1>
+        <p id="status-summary" class="summary">Loading local research session...</p>
+      </div>
+      <div class="header-actions">
+        <button id="refresh-button" type="button">Refresh</button>
+        <button id="save-button" type="button">Save session</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card brief-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Research brief</p>
+            <h2>Question and scope</h2>
+          </div>
+          <span id="phase-badge" class="badge">active</span>
+        </div>
+
+        <label>
+          <span>Session title</span>
+          <input id="session-title" type="text" placeholder="Deep research session" />
+        </label>
+
+        <label>
+          <span>Current question</span>
+          <textarea id="session-question" rows="3" placeholder="What are we trying to answer?"></textarea>
+        </label>
+
+        <label>
+          <span>Scope and exclusions</span>
+          <textarea id="session-scope" rows="3" placeholder="Define scope, exclusions, and constraints."></textarea>
+        </label>
+
+        <label>
+          <span>Expected output</span>
+          <textarea id="session-output" rows="2" placeholder="What should the final synthesis look like?"></textarea>
+        </label>
+
+        <div class="two-up">
+          <label>
+            <span>Current phase</span>
+            <select id="session-phase"></select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="session-status">
+              <option value="active">active</option>
+              <option value="paused">paused</option>
+              <option value="blocked">blocked</option>
+              <option value="complete">complete</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="card phases-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Workflow</p>
+            <h2>Phase tracker</h2>
+          </div>
+        </div>
+        <ol id="phase-list" class="phase-list"></ol>
+      </section>
+
+      <section class="card sources-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Evidence</p>
+            <h2>Source queue</h2>
+          </div>
+        </div>
+
+        <form id="source-form" class="stack-form">
+          <label>
+            <span>Source URL</span>
+            <input id="source-url" type="url" placeholder="https://example.com/article" required />
+          </label>
+          <div class="two-up">
+            <label>
+              <span>Title</span>
+              <input id="source-title" type="text" placeholder="Optional display title" />
+            </label>
+            <label>
+              <span>Type</span>
+              <select id="source-type"></select>
+            </label>
+          </div>
+          <label>
+            <span>Notes</span>
+            <textarea id="source-notes" rows="2" placeholder="Why this source matters"></textarea>
+          </label>
+          <button type="submit">Add source</button>
+        </form>
+
+        <div id="sources-list" class="stack-list"></div>
+      </section>
+
+      <section class="card workers-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Swarm</p>
+            <h2>Worker queue</h2>
+          </div>
+        </div>
+
+        <form id="worker-form" class="stack-form">
+          <div class="two-up">
+            <label>
+              <span>Profile</span>
+              <select id="worker-profile"></select>
+            </label>
+            <label>
+              <span>Status</span>
+              <select id="worker-status">
+                <option value="queued">queued</option>
+                <option value="running">running</option>
+                <option value="blocked">blocked</option>
+                <option value="done">done</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            <span>Task brief</span>
+            <textarea id="worker-task" rows="3" placeholder="Bounded task with explicit output and stop condition"></textarea>
+          </label>
+          <button type="submit">Queue worker</button>
+        </form>
+
+        <div id="workers-list" class="stack-list"></div>
+      </section>
+
+      <section class="card verification-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Verification</p>
+            <h2>Claims and gates</h2>
+          </div>
+        </div>
+
+        <form id="claim-form" class="stack-form">
+          <label>
+            <span>Claim</span>
+            <textarea id="claim-text" rows="3" placeholder="Claim supported by evidence"></textarea>
+          </label>
+          <div class="two-up">
+            <label>
+              <span>Status</span>
+              <select id="claim-status">
+                <option value="accepted">accepted</option>
+                <option value="rejected">rejected</option>
+                <option value="unresolved">unresolved</option>
+              </select>
+            </label>
+            <label>
+              <span>Citation note</span>
+              <input id="claim-citation" type="text" placeholder="Source, quote, or audit note" />
+            </label>
+          </div>
+          <button type="submit">Add claim</button>
+        </form>
+
+        <div id="claims-list" class="stack-list"></div>
+      </section>
+
+      <section class="card notes-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Memory</p>
+            <h2>Notes and open questions</h2>
+          </div>
+        </div>
+
+        <label>
+          <span>Operator notes</span>
+          <textarea id="session-notes" rows="8" placeholder="Keep the broad-then-narrow plan, unresolved questions, and handoff notes here."></textarea>
+        </label>
+
+        <div class="callout">
+          <strong>v1 boundary</strong>
+          <p>
+            Same-tab spawning is supported through copied Wave commands or direct source redirects.
+            Deterministic adjacency and autonomous browser use stay deferred.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
