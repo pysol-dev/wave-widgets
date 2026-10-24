@@ -14,9 +14,10 @@ This repo contains independent Wave Terminal widget applications. Each widget li
 
 | Directory | Description | Port | LaunchAgent |
 |---|---|---|---|
-| `wave-port-map/` | Visual map of active TCP ports with Mermaid diagram | 8765 | `wave.widgets.wave-port-map` |
+| `wave-port-map/` | Visual map of active TCP ports with Mermaid diagram | 8795 | `wave.widgets.wave-port-map` |
 | `model-server-dashboard/` | Dashboard for local and remote model servers | 8787 | `wave.widgets.model-server-dashboard` |
 | `n8n-launcher/` | Opens the native n8n UI for local/community or cloud instances via local config | 8791 | `wave.widgets.n8n-launcher` |
+| `research-cockpit/` | Long-horizon research control plane with durable session archive and Wave-aware opener helper | 8792 | `wave.widgets.research-cockpit` |
 
 ## PII redaction — MANDATORY
 

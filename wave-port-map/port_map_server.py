@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 
 
 HOST = "127.0.0.1"
-PORT = int(os.environ.get("WAVE_PORT_MAP_PORT", "8765"))
+PORT = int(os.environ.get("WAVE_PORT_MAP_PORT", "8795"))
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT / "static"
 WSH_BIN = os.environ.get(

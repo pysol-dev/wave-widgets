@@ -6,7 +6,7 @@ ROOT="$(cd "$(dirname "$0")" && pwd)"
 PLIST_SRC="${ROOT}/wave.widgets.wave-port-map.plist"
 PLIST_DST="${HOME}/Library/LaunchAgents/wave.widgets.wave-port-map.plist"
 WIDGETS_JSON="${HOME}/.config/waveterm/widgets.json"
-PORT="${WAVE_PORT_MAP_PORT:-8765}"
+PORT="${WAVE_PORT_MAP_PORT:-8795}"
 
 # Generate plist
 cat > "${PLIST_SRC}" <<EOF

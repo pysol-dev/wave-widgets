@@ -24,7 +24,7 @@ This will:
 
 1. Copy `config.template.json` → `config.json` if needed
 2. Generate and load a LaunchAgent (`wave.widgets.wave-port-map`)
-3. Start the server on `http://127.0.0.1:8765`
+3. Start the server on `http://127.0.0.1:8795`
 4. Add a `Port Map` web widget to `/Users/<user>/.config/waveterm/widgets.json`
 
 ## Open in Wave
@@ -34,10 +34,10 @@ Click the **Port Map** icon (diagram-project) in the Wave sidebar. A Mermaid dia
 ## Verify
 
 ```sh
-curl http://127.0.0.1:8765/api/health
+curl http://127.0.0.1:8795/api/health
 # → {"ok": true}
 
-curl http://127.0.0.1:8765/api/ports | python3 -m json.tool | head -10
+curl http://127.0.0.1:8795/api/ports | python3 -m json.tool | head -10
 # → {"generatedAt": "...", "count": N, ...}
 ```
 
