@@ -40,3 +40,7 @@ The n8n widget reads its instance URL from local config so it can point at eithe
 - Widget backends bind to `127.0.0.1` only.
 - Remote servers are accessed over SSH (Tailscale or local). No credentials are stored in this repo.
 - No PII or secrets should ever be committed — see [AGENTS.md](AGENTS.md) for redaction rules.
+
+## Semanticore control-plane integration
+
+Wave Widgets is an independently versioned monorepo that can participate in a Semanticore workspace. It owns Wave Terminal presentation; governance/effect authority belongs to the implemented backend such as GitGov. See [the component integration contract](docs/semanticore-integration.md) for issue/PR ownership, private-data boundaries and safe coexistence with an existing live checkout.
