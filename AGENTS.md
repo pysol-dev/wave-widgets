@@ -49,3 +49,9 @@ This repository is **public**. Never commit personally identifiable information 
 - Before committing, run: `git diff --cached` and review for IPs, usernames, and paths.
 - Use `git secrets` or a pre-commit hook if you work on this repo frequently.
 - When in doubt, ask the user before committing something sensitive.
+
+## Semanticore workspace membership
+
+This monorepo retains its own origin, code history and per-widget ownership when nested in Semanticore. Read [the integration contract](docs/semanticore-integration.md). Use component branches/PRs and a reviewed parent integration-pin update; never stage an embedded repository into the parent or treat a coordination issue as deployment permission.
+
+Keep private parent-repository plans, URLs, host inventory and captures out of this public repository. Existing local unpublished work and live widget paths must be preserved.
