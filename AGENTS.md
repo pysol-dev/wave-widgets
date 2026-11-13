@@ -18,6 +18,7 @@ This repo contains independent Wave Terminal widget applications. Each widget li
 | `model-server-dashboard/` | Dashboard for local and remote model servers | 8787 | `wave.widgets.model-server-dashboard` |
 | `n8n-launcher/` | Opens the native n8n UI for local/community or cloud instances via local config | 8791 | `wave.widgets.n8n-launcher` |
 | `research-cockpit/` | Long-horizon research control plane with durable session archive and Wave-aware opener helper | 8792 | `wave.widgets.research-cockpit` |
+| `plannotator/` | Plannotator review opener; the upstream app owns its server | Dynamic (upstream) | None required |
 
 ## PII redaction — MANDATORY
 

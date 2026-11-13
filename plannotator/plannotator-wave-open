@@ -1,0 +1,31 @@
+#!/bin/sh
+# Plannotator owns the review server; this helper only opens its URL in Wave.
+set -eu
+
+if [ "$#" -ne 1 ]; then
+  printf '%s\n' 'usage: plannotator-wave-open URL' >&2
+  exit 64
+fi
+
+case "$1" in
+  http://*|https://*) ;;
+  *)
+    printf '%s\n' 'plannotator-wave-open: expected an HTTP or HTTPS URL' >&2
+    exit 64
+    ;;
+esac
+
+if command -v wsh >/dev/null 2>&1; then
+  wsh_bin=$(command -v wsh)
+else
+  wsh_bin="$HOME/Library/Application Support/waveterm/bin/wsh"
+fi
+
+if [ ! -x "$wsh_bin" ]; then
+  printf '%s\n' 'plannotator-wave-open: Wave CLI not found; run from a Wave terminal pane.' >&2
+  exit 69
+fi
+
+# A new web block preserves the terminal running the agent. Never use --replace.
+# Wave authenticates this call using the session inherited from the terminal.
+exec "$wsh_bin" web open "$1"

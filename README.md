@@ -7,6 +7,7 @@ A collection of custom widgets for [Wave Terminal](https://waveterm.dev/).
 - **Port Map** — Visual diagram of active TCP listeners on your Mac, with process names, PIDs, and quick actions (Kill, Send to Terminal).
 - **Model Server Dashboard** — Status dashboard for local and remote model servers (Ollama, LM Studio, llama.cpp, Kokoro TTS, vLLM, etc.) with health checks, model listings, and per-server actions.
 - **n8n** — Opens the native n8n UI for local/community or paid/cloud instances, with the target URL set in local widget config.
+- **Plannotator** — Opens plan reviews, code reviews, and annotations in native Wave web panes using the official Plannotator browser override. See [setup](plannotator/README.md).
 
 ## Requirements
 
